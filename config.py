@@ -1,6 +1,6 @@
 """Stack Configs."""
 
-from typing import Annotated, Optional
+from typing import Annotated
 
 from pydantic_settings import BaseSettings
 
@@ -18,9 +18,9 @@ class Config(BaseSettings):
 
     timeout: int = 30
     memory: int = 3009
-    max_concurrent: Optional[int] = None
+    max_concurrent: int | None = None
     rate_limit: Annotated[
-        Optional[int],
+        int | None,
         "maximum average requests per second over an extended period of time",
     ] = 50
 
