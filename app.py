@@ -116,7 +116,18 @@ class StacFastApiGeoparquetStack(Stack):
         )
 
         assert stage.url
-        CfnOutput(self, "ApiURL", value=stage.url)
+        CfnOutput(
+            self,
+            "ApiGatewayDomainNameTarget",
+            value=self.domain_name.regional_domain_name,
+            description="The target for the CNAME/ALIAS record",
+        )
+        CfnOutput(
+            self,
+            "ApiURL",
+            value=f"https://{self.domain_name.name}",
+            description="The custom domain URL for the API",
+        )
 
 
 app = App()
