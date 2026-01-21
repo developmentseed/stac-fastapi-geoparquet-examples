@@ -43,7 +43,7 @@ jobs:
       - name: CDK Deploy
         id: deploy
         run: |
-          uv run npm run cdk -- deploy --require-approval never --all
+          uv run --no-dev npm run cdk -- deploy --require-approval never --all
           API_URL=$(aws cloudformation describe-stacks --stack-name stac-fastapi-geoparquet-examples --query 'Stacks[0].Outputs[?OutputKey==`ApiURL`].OutputValue' --output text)
           echo "::notice title=API URL::${API_URL}"
           echo api_url=$API_URL >> $GITHUB_OUTPUT
