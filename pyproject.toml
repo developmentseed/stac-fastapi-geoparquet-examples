@@ -1,0 +1,13 @@
+[project]
+name = "stac-geoparquet-fastapi-examples"
+version = "0.1.0"
+description = "A simple deployment of stac-fastapi-geoparquet against some stac-geoparquet examples"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aws-cdk-lib>=2.235.1",
+    "constructs>=10.4.5",
+    "mangum>=0.20.0",
+    "pydantic>=2.12.5",
+    "stac-fastapi-geoparquet>=0.0.3",
+]

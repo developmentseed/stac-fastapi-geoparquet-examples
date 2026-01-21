@@ -1,0 +1,74 @@
+[
+  {
+    "id": "mspc-naip",
+    "type": "Collection",
+    "links": [],
+    "title": "Microsoft Planetary Computer's NAIP: National Agriculture Imagery Program",
+    "assets": {
+      "geoparquet-items": {
+        "href": "./naip.parquet",
+        "type": "application/vnd.apache.parquet"
+      }
+    },
+    "extent": {
+      "spatial": {
+        "bbox": [
+          [-124.784, 24.744, -66.951, 49.346],
+          [-156.003, 19.059, -154.809, 20.127],
+          [-67.316, 17.871, -65.596, 18.565],
+          [-64.94, 17.622, -64.56, 17.814]
+        ]
+      },
+      "temporal": {
+        "interval": [["2010-01-01T00:00:00Z", "2023-12-31T00:00:00Z"]]
+      }
+    },
+    "license": "proprietary",
+    "keywords": [
+      "NAIP",
+      "Aerial",
+      "Imagery",
+      "USDA",
+      "AFPO",
+      "Agriculture",
+      "United States"
+    ],
+    "providers": [
+      {
+        "url": "https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/",
+        "name": "USDA Farm Service Agency",
+        "roles": ["producer", "licensor"]
+      },
+      {
+        "url": "https://www.esri.com/",
+        "name": "Esri",
+        "roles": ["processor"]
+      },
+      {
+        "url": "https://planetarycomputer.microsoft.com",
+        "name": "Microsoft",
+        "roles": ["host", "processor"]
+      }
+    ],
+    "summaries": {
+      "gsd": [0.3, 0.6, 1.0],
+      "eo:bands": [
+        { "name": "Red", "common_name": "red", "description": "visible red" },
+        {
+          "name": "Green",
+          "common_name": "green",
+          "description": "visible green"
+        },
+        {
+          "name": "Blue",
+          "common_name": "blue",
+          "description": "visible blue"
+        },
+        { "name": "NIR", "common_name": "nir", "description": "near-infrared" }
+      ]
+    },
+    "description": "The [National Agriculture Imagery Program](https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/) (NAIP) \nprovides U.S.-wide, high-resolution aerial imagery, with four spectral bands (R, G, B, IR). \nNAIP is administered by the [Aerial Field Photography Office](https://www.fsa.usda.gov/programs-and-services/aerial-photography/) (AFPO) \nwithin the [US Department of Agriculture](https://www.usda.gov/) (USDA). \nData are captured at least once every three years for each state. \nThis dataset represents NAIP data from 2010-present, in [cloud-optimized GeoTIFF](https://www.cogeo.org/) format.\nYou can visualize the coverage of current and past collections [here](https://naip-usdaonline.hub.arcgis.com/). \n",
+    "stac_version": "1.1.0",
+    "stac_extensions": []
+  }
+]
