@@ -28,6 +28,7 @@ jobs:
       name: deploy
       url: ${{ steps.deploy.outputs.api_url }}
     steps:
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
       - name: CDK Deploy
         id: deploy

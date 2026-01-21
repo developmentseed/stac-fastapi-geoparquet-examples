@@ -7,7 +7,6 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       - uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::390960605471:role/stac-fastapi-geoparquet-examples-deploy
