@@ -29,7 +29,7 @@ jobs:
       url: ${{ steps.deploy.outputs.api_url }}
     steps:
       - uses: actions/checkout@v4
-      - uses: aws-actions/configure-aws-credentials@v4
+      - uses: aws-actions/configure-aws-credentials@v5
         with:
           role-to-assume: arn:aws:iam::390960605471:role/stac-fastapi-geoparquet-examples-deploy
           role-session-name: stac-fastapi-geoparquet-examples-deploy
