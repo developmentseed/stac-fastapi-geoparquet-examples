@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
       - name: Synthesize
-        run: uv run cdk synth
+        run: uv run --no-dev npx cdk synth
       - uses: corymhall/cdk-diff-action@v2
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
