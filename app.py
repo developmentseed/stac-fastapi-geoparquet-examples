@@ -14,6 +14,7 @@ from aws_cdk import (
     Tags,
 )
 from aws_cdk.aws_apigatewayv2 import (
+    DomainMappingOptions,
     DomainName,
     HttpApi,
     HttpStage,
@@ -111,6 +112,7 @@ class StacFastApiGeoparquetStack(Stack):
             )
             if config.rate_limit
             else None,
+            domain_mapping=DomainMappingOptions(domain_name=self.domain_name),
         )
 
         assert stage.url
