@@ -16,6 +16,9 @@ class Config(BaseSettings):
     bucket_name: str = "stac-geoparquet-examples"
     collections_key: str = "collections.json"
 
+    domain_name: str = "stac-geoparquet.labs.eoapi.dev"
+    certificate_arn: str = "arn:aws:acm:us-west-2:390960605471:certificate/22b1576d-c7b0-47dd-8f60-62459d33daec"  # noqa
+
     timeout: int = 30
     memory: int = 3009
     max_concurrent: int | None = None
