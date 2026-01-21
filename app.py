@@ -13,8 +13,17 @@ from aws_cdk import (
     Stack,
     Tags,
 )
-from aws_cdk.aws_apigatewayv2 import HttpApi, HttpStage, ThrottleSettings
+from aws_cdk.aws_apigatewayv2 import (
+    DomainMappingOptions,
+    DomainName,
+    HttpApi,
+    HttpStage,
+    MappingValue,
+    ParameterMapping,
+    ThrottleSettings,
+)
 from aws_cdk.aws_apigatewayv2_integrations import HttpLambdaIntegration
+from aws_cdk.aws_certificatemanager import Certificate
 from aws_cdk.aws_iam import AnyPrincipal, Effect, PolicyStatement
 from aws_cdk.aws_lambda import Code, Function, Handler, Runtime
 from aws_cdk.aws_s3 import Bucket
@@ -70,14 +79,24 @@ class StacFastApiGeoparquetStack(Stack):
 
         bucket.grant_read(api_lambda)
 
+        self.domain_name = DomainName(
+            self,
+            "api-domain-name",
+            domain_name=config.domain_name,
+            certificate=Certificate.from_certificate_arn(
+                self, "api-cdn-certificate", certificate_arn=config.certificate_arn
+            ),
+        )
         api = HttpApi(
             scope=self,
             id="api",
             default_integration=HttpLambdaIntegration(
                 "api-integration",
                 handler=api_lambda,
+                parameter_mapping=ParameterMapping().overwrite_header(
+                    "host", MappingValue.custom(self.domain_name.name)
+                ),
             ),
-            default_domain_mapping=None,  # TODO: enable custom domain name
             create_default_stage=False,  # Important: disable default stage creation
         )
 
@@ -93,6 +112,7 @@ class StacFastApiGeoparquetStack(Stack):
             )
             if config.rate_limit
             else None,
+            domain_mapping=DomainMappingOptions(domain_name=self.domain_name),
         )
 
         assert stage.url
