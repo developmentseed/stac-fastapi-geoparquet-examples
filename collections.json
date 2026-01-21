@@ -6,7 +6,7 @@
     "title": "Microsoft Planetary Computer's NAIP: National Agriculture Imagery Program",
     "assets": {
       "geoparquet-items": {
-        "href": "./naip.parquet",
+        "href": "./naip.parquet/*",
         "type": "application/vnd.apache.parquet"
       }
     },

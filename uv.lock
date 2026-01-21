@@ -495,7 +495,7 @@ wheels = [
 
 [[package]]
 name = "stac-fastapi-geoparquet"
-version = "0.0.3"
+version = "0.0.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "attr" },
@@ -509,9 +509,9 @@ dependencies = [
     { name = "stac-fastapi-extensions" },
     { name = "stac-fastapi-types" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/1c/99/7211458284b934d5313b4d61fc204dcc01935140006b409234a06a4300e0/stac_fastapi_geoparquet-0.0.3.tar.gz", hash = "sha256:979e8ab4b5818b0443687e3cc6c5e08334852d62035e0aa2f2848014cb693c9a", size = 12685, upload-time = "2026-01-21T13:40:38.511Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a7/45/3d6cdc62ef3d274572e8187c97af4de6db048c5360921faad767fe8eaaa7/stac_fastapi_geoparquet-0.0.4.tar.gz", hash = "sha256:6c040856925caaa1fb3288d2b9dbd4db776b5354f613aa871a3082efa016be0a", size = 12728, upload-time = "2026-01-21T14:25:02.871Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/cb/dc/f76e2d0f2753556719f293859521e0a329c6f9a334ee5212d0e55429d630/stac_fastapi_geoparquet-0.0.3-py3-none-any.whl", hash = "sha256:f5c00015550b2b2917fae8ec216a606f905e563378cc2aef698736fbdf18fccf", size = 10928, upload-time = "2026-01-21T13:40:37.417Z" },
+    { url = "https://files.pythonhosted.org/packages/c4/84/6469aacd1ed0fdfe3c383cf0c0f11e25e889e5f0e8e3a5c3518adb70b0f4/stac_fastapi_geoparquet-0.0.4-py3-none-any.whl", hash = "sha256:dc511e3c41323ece60863526d9b28db02b8c682c50916452d1dfdd8cfca0e197", size = 10957, upload-time = "2026-01-21T14:25:01.536Z" },
 ]
 
 [[package]]
@@ -539,6 +539,7 @@ dependencies = [
     { name = "constructs" },
     { name = "mangum" },
     { name = "pydantic" },
+    { name = "rustac" },
     { name = "stac-fastapi-geoparquet" },
 ]
 
@@ -548,7 +549,8 @@ requires-dist = [
     { name = "constructs", specifier = ">=10.4.5" },
     { name = "mangum", specifier = ">=0.20.0" },
     { name = "pydantic", specifier = ">=2.12.5" },
-    { name = "stac-fastapi-geoparquet", specifier = ">=0.0.3" },
+    { name = "rustac", specifier = ">=0.9.3" },
+    { name = "stac-fastapi-geoparquet", specifier = ">=0.0.4" },
 ]
 
 [[package]]

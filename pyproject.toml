@@ -9,5 +9,6 @@ dependencies = [
     "constructs>=10.4.5",
     "mangum>=0.20.0",
     "pydantic>=2.12.5",
-    "stac-fastapi-geoparquet>=0.0.3",
+    "rustac>=0.9.3",
+    "stac-fastapi-geoparquet>=0.0.4",
 ]
