@@ -1,0 +1,18 @@
+name: Setup
+description: Set up AWS, node, and uv
+
+runs:
+  using: composite
+  steps:
+    - uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: arn:aws:iam::390960605471:role/stac-fastapi-geoparquet-examples-deploy
+        role-session-name: stac-fastapi-geoparquet-examples-deploy
+        aws-region: us-west-2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: 22
+    - uses: astral-sh/setup-uv@v3
+    - name: Install npm dependencies
+      shell: bash
+      run: npm install
