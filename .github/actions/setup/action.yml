@@ -14,4 +14,5 @@ runs:
         node-version: 22
     - uses: astral-sh/setup-uv@v3
     - name: Install npm dependencies
+      shell: bash
       run: npm install
